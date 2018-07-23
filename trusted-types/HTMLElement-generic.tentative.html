@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <script src="support/helper.sub.js"></script>
+<script>
+  //HTMLBaseElement
+  test(t => {
+    assert_accepts_trusted_url('base', 'href');
+  }, "base.href = URLS.safe, TrustedURL.create");
+</script>
+</head>
+<body>
+  <map>
+    <script>
+      //HTMLAreaElement
+      test(t => {
+        assert_accepts_trusted_url('area', 'href');
+      }, "area.href = URLS.safe, TrustedURL.create");
+    </script>
+  </map>
+<script>
+  //HTMLAnchorElement
+  test(t => {
+    assert_accepts_trusted_url('a', 'href');
+  }, "a.href = URLS.safe, TrustedURL.create");
+
+  //HTMLEmbedElement
+  test(t => {
+    assert_accepts_trusted_script_url('embed', 'src');
+  }, "embed.src = URLS.safe, TrustedURL.create");
+
+  //HTMLFrameElement
+  test(t => {
+    assert_accepts_trusted_url('frame', 'src');
+  }, "frame.src = URLS.safe, TrustedURL.create");
+
+  //HTMLIFrameElement
+  test(t => {
+    assert_accepts_trusted_url('iframe', 'src');
+  }, "iframe.src = URLS.safe, TrustedURL.create");
+
+  //HTMLImageElement
+  test(t => {
+    assert_accepts_trusted_url('img', 'src');
+  }, "img.src = URLS.safe, TrustedURL.create");
+
+  //HTMLInputElement
+  test(t => {
+    assert_accepts_trusted_url('input', 'src');
+  }, "input.src = URLS.safe, TrustedURL.create");
+
+  //HTMLLinkElement
+  test(t => {
+    assert_accepts_trusted_url('link', 'href');
+  }, "link.href = URLS.safe, TrustedURL.create");
+
+  //HTMLMediaElement
+  test(t => {
+    assert_accepts_trusted_url('video', 'src');
+  }, "video.src = URLS.safe, TrustedURL.create");
+
+  //HTMLObjectElement
+  test(t => {
+    assert_accepts_trusted_url('object', 'data');
+  }, "object.data = URLS.safe, TrustedURL.create");
+
+  test(t => {
+    assert_accepts_trusted_url('object', 'codeBase');
+  }, "object.codeBase = URLS.safe, TrustedURL.create");
+
+  //HTMLScriptElement
+  test(t => {
+    assert_accepts_trusted_script_url('script', 'src');
+  }, "script.src = URLS.safe, TrustedURL.create");
+
+  //HTMLSourceElement
+  test(t => {
+    assert_accepts_trusted_url('source', 'src');
+  }, "source.src = URLS.safe, TrustedURL.create");
+
+  //HTMLTrackElement
+  test(t => {
+    assert_accepts_trusted_url('track', 'src');
+  }, "track.src = URLS.safe, TrustedURL.create");
+</script>

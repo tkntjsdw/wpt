@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <script src="support/helper.sub.js"></script>
+
+  <meta http-equiv="Content-Security-Policy" content="require-trusted-types">
+<script>
+  //HTMLBaseElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('base', 'href');
+  }, "base.href = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('base', 'href', 'A string');
+  }, "`base.href = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('base', 'href', null);
+  }, "`base.href = null` throws");
+</script>
+</head>
+<body>
+  <map>
+    <script>
+      //HTMLAreaElement
+      //URL assignments do not throw.
+      test(t => {
+        assert_accepts_trusted_url('area', 'href');
+      }, "area.href = URLS.safe, TrustedURL.create");
+
+      // String assignments throw.
+      test(t => {
+        assert_throws_no_trusted_type('area', 'href', 'A string');
+      }, "`area.href = string` throws");
+
+      //Null assignment throws.
+      test(t => {
+        assert_throws_no_trusted_type('area', 'href', null);
+      }, "`area.href = null` throws");
+    </script>
+  </map>
+<script>
+  //HTMLAnchorElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('a', 'href');
+  }, "a.href = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('a', 'href', 'A string');
+  }, "`a.href = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('a', 'href', null);
+  }, "`a.href = null` throws");
+
+  //HTMLEmbedElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_script_url('embed', 'src');
+  }, "embed.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('embed', 'src', 'A string');
+  }, "`embed.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('embed', 'src', null);
+  }, "`embed.src = null` throws");
+
+  //HTMLFrameElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('frame', 'src');
+  }, "frame.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('frame', 'src', 'A string');
+  }, "`frame.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('frame', 'src', null);
+  }, "`frame.src = null` throws");
+
+  //HTMLIFrameElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('iframe', 'src');
+  }, "iframe.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('iframe', 'src', 'A string');
+  }, "`iframe.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('iframe', 'src', null);
+  }, "`iframe.src = null` throws");
+
+  //HTMLImageElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('img', 'src');
+  }, "img.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('img', 'src', 'A string');
+  }, "`img.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('img', 'src', null);
+  }, "`img.src = null` throws");
+
+  //HTMLInputElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('input', 'src');
+  }, "input.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('input', 'src', 'A string');
+  }, "`input.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('input', 'src', null);
+  }, "`input.src = null` throws");
+
+  //HTMLLinkElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('link', 'href');
+  }, "link.href = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('link', 'href', 'A string');
+  }, "`link.href = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('link', 'href', null);
+  }, "`link.href = null` throws");
+
+  //HTMLMediaElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('video', 'src');
+  }, "video.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('video', 'src', 'A string');
+  }, "`video.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('video', 'src', null);
+  }, "`video.src = null` throws");
+
+  //HTMLObjectElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('object', 'data');
+  }, "object.data = URLS.safe, TrustedURL.create");
+
+  test(t => {
+    assert_accepts_trusted_url('object', 'codeBase');
+  }, "object.codeBase = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('object', 'codeBase', 'A string');
+  }, "`object.codeBase = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('object', 'codeBase', null);
+  }, "`object.codeBase = null` throws");
+
+  //HTMLScriptElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_script_url('script', 'src');
+  }, "script.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('script', 'src', 'A string');
+  }, "`script.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('script', 'src', null);
+  }, "`script.src = null` throws");
+
+  //HTMLSourceElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('source', 'src');
+  }, "source.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('source', 'src', 'A string');
+  }, "`source.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('source', 'src', null);
+  }, "`source.src = null` throws");
+
+  //HTMLTrackElement
+  //URL assignments do not throw.
+  test(t => {
+    assert_accepts_trusted_url('track', 'src');
+  }, "track.src = URLS.safe, TrustedURL.create");
+
+  // String assignments throw.
+  test(t => {
+    assert_throws_no_trusted_type('track', 'src', 'A string');
+  }, "`track.src = string` throws");
+
+  //Null assignment throws.
+  test(t => {
+    assert_throws_no_trusted_type('track', 'src', null);
+  }, "`track.src = null` throws");
+</script>
